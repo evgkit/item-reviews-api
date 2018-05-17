@@ -2,6 +2,7 @@ package com.evgkit.review;
 
 import com.evgkit.core.BaseEntity;
 import com.evgkit.item.Item;
+import com.evgkit.user.User;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -13,6 +14,9 @@ public class Review extends BaseEntity {
 
     @ManyToOne
     private Item item;
+
+    @ManyToOne
+    private User reviewer;
 
     public Review() {
         super();
@@ -45,5 +49,13 @@ public class Review extends BaseEntity {
 
     public void setItem(Item item) {
         this.item = item;
+    }
+
+    public User getReviewer() {
+        return reviewer;
+    }
+
+    public void setReviewer(User reviewer) {
+        this.reviewer = reviewer;
     }
 }
